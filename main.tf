@@ -64,30 +64,6 @@ resource "aws_security_group_rule" "eks_ebl_ingress_node_ssh" {
   type              = "ingress"
 }
 
-# resource "aws_security_group" "lab_sg" {
-#   name        = "lab_sg"
-#   description = "Security group for lab"
-#   vpc_id      = aws_vpc.lab_vpc.id
-
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-#   ingress {
-#     description = "SSH from internet"
-#     from_port   = 22
-#     to_port     = 22
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
-
-#   tags = {
-#     "Name"                                      = "lab_sg"
-#   }
-# }
-
 resource "aws_key_pair" "ebl_key" {
   key_name   = "ebl-key"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbDTfqYwUi9QANFQop9ARSzO3+OFCdjOvEk7p7eJxhfDXmchQhCcoZUT1y+32zcY1IFRjtejs80eEu/0cbkyzlPF1Y1hJNZnEmQDinJQ/CoE6wFriEjo73ZP6FlQgpCo2zVE0vhTAm8npnR1fMKkFoPMpPVrXpytaGhdgJjBkGc5N6kuJdcXDM6p8mwrEiBI7Pz/A7cLmDNxaxrj2LQA3dcGQaiq8/QRIpUw1xlyMzXQCEOmcnkA/jqFpkcaCyOFfpZaDnAt3bO8zXwstHSXtjxvt0JJmGnMl4rVSJdLT8U64hWusdD+FrvWRefsjUb0LM4JQAy8gcHu73tiwVtQID administrator@LTKB062"
